@@ -114,7 +114,11 @@ export default {
   beforeCreate () {
     this.$liff.init({
         liffId: '1657176644-pl0qB1a7',
-    })
+    }).then(() => {
+      const idToken = this.$liff.getIDToken();
+      //console.log(idToken); // print raw idToken object
+      this.id_token = idToken
+    });
   },
   data: () => ({
     profile: {
