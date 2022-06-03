@@ -123,7 +123,7 @@ export default {
     //toastCount: 0
     showDismissibleAlert: true,
     items: [
-      { 'User ID': this.profile.userId, 'Display Name': this.profile.displayName, 'Picture URL': this.profile.pictureUrl, 'Status Message': this.profile.statusMessage },
+      { 'User ID': '', 'Display Name': '', 'Picture URL': '', 'Status Message': '' },
     ],
     profile_status : false,
     user_status : false
@@ -134,8 +134,12 @@ export default {
   },
   mounted(){
     //this.getImage()
+    //this.getProfile ()
+    //this.checkUser ()
+  },
+  updated(){
     this.getProfile ()
-    this.checkUser ()
+    //this.checkUser ()
   },
   methods: {
     async checkUser(){
@@ -154,7 +158,7 @@ export default {
       this.$liff.getProfile().then(function (profile) {
         _this.profile_status = true
         _this.profile = profile
-        //_this.items = [_this.profile]
+        _this.items = [_this.profile]
       }).catch(function (error) {
         alert('Error getting profile: ' + error)
       })
