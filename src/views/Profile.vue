@@ -80,6 +80,9 @@
       <div class="col-12 col-md-4" v-else>
         <b-button variant="warning d-block d-sm-inline w-100" @click="updateProfile()" class="mb-2">อัพเดทโปรไฟล์</b-button>
       </div>
+      <div class="col-12 col-md-4">
+        <b-button variant="warning d-block d-sm-inline w-100" @click="getProfile()" class="mb-2">ppp</b-button>
+      </div>
     </div>
     <div class="text-center">
       
@@ -150,7 +153,7 @@ export default {
         this.profile_status = true
         _this.profile = profile
       }).catch(function () {
-        //alert('Error getting profile: ' + error)
+        alert('Error getting profile: ' + error)
       })
     },
     updateProfile () {
