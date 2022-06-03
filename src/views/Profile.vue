@@ -83,9 +83,13 @@
       <div class="col-12 col-md-4">
         <b-button variant="warning d-block d-sm-inline w-100" @click="getProfile()" class="mb-2">ppp</b-button>
       </div>
+
+      <div class="col-12 col-md-4">
+        <b-button variant="danger d-block d-sm-inline w-100" @click="getIDToken()" class="mb-2">tk</b-button>
+      </div>
     </div>
     <div class="text-center">
-      
+      <p>{{id_token}}</p>
       
       
       <!--
@@ -126,7 +130,8 @@ export default {
       { 'User ID': '', 'Display Name': '', 'Picture URL': '', 'Status Message': '' },
     ],
     profile_status : false,
-    user_status : false
+    user_status : false,
+    id_token: null
   }),
   created () {
     //this.getProfile ()
@@ -167,6 +172,14 @@ export default {
       this.$toast.warning('ยังไม่สามารถใช้งานได้', {
           position: 'top'
         })
+    },
+    getIDToken () {
+      let _this = this
+      this.$liff.getIDToken().then(function (tk) {
+        _this.id_token = tk
+      }).catch(function () {
+        alert('Error getting token')
+      })
     },
     async clickGetProfile () {
       let _this = this
