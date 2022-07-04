@@ -11,11 +11,19 @@
         </div>
       </div>
     </div>
-    <div class="text-center">
-      <p>{{id_token}}</p>
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center">
+          <p>{{id_token}}</p>
+        </div>
+      </div>
     </div>
-    <div>
-      <b-table responsive striped hover stacked bordered :items="items"></b-table>
+    <div class="row">
+      <div class="col-12">
+        <div>
+          <b-table responsive striped hover stacked bordered :items="items"></b-table>
+        </div>
+      </div>
     </div>
     <!--
       <div class="columns is-mobile">
@@ -150,7 +158,7 @@ export default {
     //this.checkUser ()
   },
   updated(){
-    this.getProfile ()
+    //this.getProfile ()
     //this.checkUser ()
   },
   methods: {
