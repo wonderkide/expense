@@ -11,6 +11,9 @@
         </div>
       </div>
     </div>
+    <div class="text-center">
+      <p>{{id_token}}</p>
+    </div>
     <div>
       <b-table responsive striped hover stacked bordered :items="items"></b-table>
     </div>
